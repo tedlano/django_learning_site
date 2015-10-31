@@ -113,6 +113,11 @@ python manage.py shell
     20.2 Modify home.html to include layout.html
 
 21. Adding static assets (css files)
+
+    21.0 Create static assets directory in top level, then css directory, then css file
+    mkdir assets
+    mkdir assets/css
+    touch assets/css/layout.css
     
     21.1 In learning_site/settings.py, create a reference for STATICFILES_DIRS
 
@@ -120,8 +125,63 @@ python manage.py shell
     
     21.3 Modify layout.html
     
+22. Add a Detail view for courses
+
+    22.1 Modify views.py, create course_detail method
     
+    22.2 Modify urls.py, Create a url to get to course_detail
     
+    22.3 Create new template for course details
+    touch courses/templates/courses/course_detail.html'
+    
+23. I screwed up, forgot to add "Steps" for our courses earlier
+
+    23.1 Open models.py and add new Step definition
+    
+    23.2 Generate migration
+    python manage.py makemigrations courses
+    python manage.oy migrate courses
+    
+    23.3 Open admin.py and add Step references
+    
+    23.4 Adding steps through admin console is tedious, so we'll create another form for admin console.
+    
+24. Meta attributes
+
+    24.1 Define default ordering for steps inside of models.py
+    
+25. Define the 404 error and redirect page
+
+    25.1 Modify views.py
+    
+26. Create a Step detail view
+
+    26.1 Create a view
+    
+    26.2 Create a url
+    
+    26.3 Create a template
+    touch courses/templates/courses/step_detail.html
+
+    26.4 Add "content" field to Step model
+    
+    26.5 Generate Migration
+    python manage.py makemigrations courses
+    python manage.py migrate courses
+    
+27. Creating maintainable URLS
+
+    27.1 Create a header bar in layout template
+    
+    27.2 Modify urls.py, include "name" arguments
+    course_list.html
+    course_detail.html
+    step_detail.html
+    
+    27.3 Modify urls.py under the learning_site directory
+    
+    27.4 Modify layout.html, add "courses" namespace
+    modify course_detail.html
     
     
     

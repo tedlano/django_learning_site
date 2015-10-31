@@ -5,7 +5,18 @@
 <html>
     <head>
         <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="{% static 'css/layouts.css' %}"> <!-- Step 12.3 addition -->
+        <link rel="stylesheet" href="{% static 'css/layout.css' %}"> <!-- Step 12.3 addition -->
     </head>  
-    <body>{% block content %}{% endblock %}</body>
+    <body>
+        
+        <div class="site-container">
+            <nav>
+                <a href="{% url 'views.hello_world' %}">Home</a>
+                <a href="{% url 'courses:list' %}">Courses</a> <!-- Step 27.4 mod -->
+            </nav>
+            
+            {% block content %}{% endblock %}
+        </div>
+        
+    </body>
 </html>

@@ -11,7 +11,9 @@
     <section>
         {% for step in course.step_set.all %}
             <h3>
+            <a href="{% url 'courses:step' course_pk=step.course.pk step_pk=step.pk %}"> <!-- Step 27.4 mod -->
                 {{ step.title }}
+            </a>
             </h3>
             {{ step.description }}
         {% endfor %}

@@ -15,16 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns  # Step 21.2 addition
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns  # Step 21.2 add
 
 
-from . import views  # Step 5 addition
+from . import views  # Step 5 add
 
 urlpatterns = [
-    url(r'^courses/', include('courses.urls')), # Step 16 addition
+    url(r'^courses/', include('courses.urls', namespace='courses')), # Step 16 add, 27.3 mod
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.hello_world),  # Step 5 addition
 ]
 
 
-urlpatterns += staticfiles_urlpatterns()    # Step 21.2 addition
+urlpatterns += staticfiles_urlpatterns()    # Step 21.2 add

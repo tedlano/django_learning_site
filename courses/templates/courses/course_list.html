@@ -1,5 +1,21 @@
-<!--Step 18.2 Addition -->
-{% for course in courses %}
-<h2>{{ course.title }}</h2>
-{{ course.description }}
-{% endfor %}
+{% extends "layout.html" %}
+
+{% block title %}Available Courses{% endblock %}
+
+{% block content %}
+<div class="cards">
+    <!--Step 18.2 Addition -->
+    {% for course in courses %}
+    <div class="card">
+        <header>
+            <a href="{% url 'courses:detail' pk=course.pk %}"> <!-- 27.4 mod -->
+                {{ course.title }}
+            </a>
+        </header>
+        <div class="card-copy">
+            {{ course.description }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
