@@ -1,0 +1,11 @@
+{% load static from staticfiles %} <!-- Step 12.3 addition -->
+
+<!-- Step 20.1 Addition -->
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/layouts.css' %}"> <!-- Step 12.3 addition -->
+    </head>  
+    <body>{% block content %}{% endblock %}</body>
+</html>
