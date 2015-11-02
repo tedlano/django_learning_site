@@ -183,7 +183,12 @@ python manage.py shell
     27.4 Modify layout.html, add "courses" namespace
     modify course_detail.html
     
+28. Create tests
+
+    28.1 Modify tests.py, Create tests for models
     
+    28.2 Run test
+    python manage.py test
     
     
     

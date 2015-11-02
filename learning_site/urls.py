@@ -28,3 +28,5 @@ urlpatterns = [
 
 
 urlpatterns += staticfiles_urlpatterns()    # Step 21.2 add
+
+
